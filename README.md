@@ -14,6 +14,8 @@ Additionally MariaDbConnector provides a query() method specifically for SELECT 
 
 The MariaDbConnector therefore greatly simplifies coding for most applications. However, if needed you can also use its cursor() method to get a MariaDB cursor object and then write code with the same versatility of the MariaDB module.
 
+To use the example script, setup a database named 'data_mdb_test' with a user 'test_user' and password 'test_user'. Alternatively use your own names and password and enter these in the config.ini file.
+
 MySQL database compatibility: As stated in the documentation for the underlying MariaDB module, it supports MySQL databases. However, it may develop away from the common MySQL database functionality in future. Therefore, this code may work with MySQL databases today, but is not guaranteed to work in the future. Therefore if you must use a MySQL database, we recommend to carefully monitor the development of this and the MariaDB module and regularly check for compatibility of your application code.
 
 
