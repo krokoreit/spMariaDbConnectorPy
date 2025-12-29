@@ -119,7 +119,7 @@ class MariaDbConnector():
 
 
     def rollback(self):
-        """Rolls back a transaction"""
+        """Rolls back a transaction."""
 
         try:
             # must have connection
@@ -148,8 +148,8 @@ class MariaDbConnector():
 
     def execute(self, sql, data: Sequence = (), prevent_auto_commit = False, buffered=None):
         """Calls cursor.execute(sql, data) and returns True for succesful execution. In case
-            of failure, check last_error() for details on error. Use prevent_auto_commit = True 
-            for transactions ro remain uncommitted."""
+            of failure, check last_error() for details about the error. Use prevent_auto_commit = True 
+            for transactions to remain uncommitted."""
 
         execute_ok = True
         self._last_error = None
@@ -176,8 +176,8 @@ class MariaDbConnector():
 
     def executemany(self, sql, data, prevent_auto_commit = False):
         """Calls cursor.executemany(sql, data) and returns True for succesful execution. In case
-            of failure, check last_error() for details on error. Use prevent_auto_commit = True 
-            for transactions ro remain uncommitted."""
+            of failure, check last_error() for details about the error. Use prevent_auto_commit = True 
+            for transactions to remain uncommitted."""
 
         execute_ok = True
         self._last_error = None
@@ -203,10 +203,10 @@ class MariaDbConnector():
 
 
     def query(self, sql, data: Sequence = (), buffered=None):
-        """Creates a connection and cursor and then executes the sql query for
+        """Creates a connection and cursor object before executing the sql query for
         results to be fetched by the fetch functions of this class.
         Returns True for succesful execution. In case of failure, check last_error() for
-        details on error.
+        details about the error.
         Must call disconnect() to close connection and cursor when no longer used."""
 
         execute_ok = True
@@ -234,7 +234,7 @@ class MariaDbConnector():
         """Calls cursor.fetchone() to fetch the next row of a query result set, 
         returning a single sequence, or None if no more data is available.
         None is also returned, when an error occurs, e.g. when the previous call to
-        execute() didn't produce a result set or execute() wasn't called before.
+        query() / execute() didn't produce a result set or query() / execute() wasn't called before.
         Therefore, when None is returned, check for 'last_error() is None' to confirm that
         there are really no more data available.
         """
@@ -263,8 +263,8 @@ class MariaDbConnector():
         as indicated by the size parameter. If this is not possible due to the 
         specified number of rows not being available, fewer rows may be returned.
 
-        When an error occurs when, e.g. the previous call to execute() didn't
-        produce a result set or execute() wasn't called before, None is returned.
+        When an error occurs, e.g. the previous call to query() / execute() didn't
+        produce a result set or query() / execute() wasn't called before, None is returned.
         """
 
         self._last_error = None
@@ -284,8 +284,8 @@ class MariaDbConnector():
         """Calls cursor.fetchall() to fetch all remaining rows of a query result, 
         returning them as a sequence of sequences (e.g. a list of tuples).
 
-        When an error occurs when, e.g. the previous call to execute() didn't
-        produce a result set or execute() wasn't called before, None is returned.
+        When an error occurs, e.g. the previous call to query() / execute() didn't
+        produce a result set or query() / execute() wasn't called before, None is returned.
         """
 
         self._last_error = None
@@ -302,7 +302,7 @@ class MariaDbConnector():
 
 
     def get_rowcount(self):
-        """Returns rowcount of the cursor after execute."""
+        """ReturnsReturns the number of rows of the cursor after running execute statements."""
 
         if self._cursor is None:
             return 0
@@ -311,5 +311,5 @@ class MariaDbConnector():
 
 
     def last_error(self):
-        """Returns last error from previous operation."""
+        """Returns the last error from a previous operation."""
         return self._last_error
