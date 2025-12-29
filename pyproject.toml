@@ -11,9 +11,9 @@ name = "spMariaDbConnectorPy"
 authors = [
   { name="krokoreit", email="krokoreit@gmail.com" },
 ]
-description = "A Python package for ..."
+description = "A Python package for simplifying coding and handling data with the MariaDB module."
 keywords = [
-    "key1",
+    "MariaDB", "MySQL", "database", "query", "auto-commit"
 ]
 dependencies = [
   "mariadb"
