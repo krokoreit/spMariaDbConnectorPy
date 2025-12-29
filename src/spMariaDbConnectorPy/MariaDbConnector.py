@@ -40,7 +40,7 @@ class MariaDbConnector():
     def __init__(self, config_file, config_section):
 
         if not os.path.isfile(config_file):
-            raise Exception ('Config file does not exist')
+            raise Exception ('Config file', config_file, 'does not exist.')
 
         config = configparser.ConfigParser(inline_comment_prefixes='#', empty_lines_in_values=False)
         config.read(config_file)        
