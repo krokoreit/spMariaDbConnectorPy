@@ -3,6 +3,8 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/spMariaDbConnectorPy.svg)](https://pypi.org/project/spMariaDbConnectorPy)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/spMariaDbConnectorPy.svg)](https://pypi.org/project/spMariaDbConnectorPy)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 This Python package and its MariaDbConnector module use and thus builds on the functionality of the MariaDB module, which pip will automatically install with it.
 
@@ -59,7 +61,7 @@ password = test_user
 
 ### API
 
-#### Methods
+#### Methods<a id="methods"></a>
 * [execute()](#execute-method)  
 * [executemany()](#executemany-method)  
 * [query()](#query-method)  
@@ -75,7 +77,7 @@ password = test_user
 * [get_rowcount()](#get_rowcount-method)  
 * [last_error()](#last_error-method)  
 
-#### execute() Method
+#### execute() Method<a id="execute-method"></a>
 ```py
   execute(sql, data: Sequence = (), prevent_auto_commit = False, buffered=None)
 ```
@@ -103,7 +105,7 @@ The underlying cursor.execute() method always generates a buffered result unless
 
 </br>
 
-#### executemany() Method
+#### executemany() Method<a id="executemany-method"></a>
 ```py
   executemany(sql, data, prevent_auto_commit = False)
 ```
@@ -113,7 +115,7 @@ Calls cursor.executemany(sql, data) and returns True for succesful execution. In
 
 </br>
 
-#### query() Method
+#### query() Method<a id="query-method"></a>
 ```py
   query(sql, data: Sequence = (), buffered=None)
 ```
@@ -125,7 +127,7 @@ Must call disconnect() to close connection and cursor when no longer used.
 
 </br>
 
-#### fetchone() Method
+#### fetchone() Method<a id="fetchone-method"></a>
 ```py
   fetchone()
 ```
@@ -136,7 +138,7 @@ Calls cursor.fetchone() to fetch the next row of a query result set, returning a
 
 </br>
 
-#### fetchmany() Method
+#### fetchmany() Method<a id="fetchmany-method"></a>
 ```py
   fetchmany(size: int = 0)
 ```
@@ -150,7 +152,7 @@ When an error occurs, e.g. the previous call to query() / execute() didn't produ
 
 </br>
 
-#### fetchall() Method
+#### fetchall() Method<a id="fetchall-method"></a>
 ```py
   fetchall()
 ```
@@ -163,7 +165,7 @@ When an error occurs, e.g. the previous call to query() / execute() didn't produ
 
 </br>
 
-#### begin() Method
+#### begin() Method<a id="begin-method"></a>
 ```py
   begin()
 ```
@@ -174,7 +176,7 @@ Note that a transaction will be automatically committed by the [execute()](#exec
 
 </br>
 
-#### commit() Method
+#### commit() Method<a id="commit-method"></a>
 ```py
   commit()
 ```
@@ -184,7 +186,7 @@ Commits a pending transaction to the database.
 
 </br>
 
-#### rollback() Method
+#### rollback() Method<a id="rollback-method"></a>
 ```py
   rollback()
 ```
@@ -194,7 +196,7 @@ Rolls back a transaction started with begin().
 
 </br>
 
-#### connect() Method
+#### connect() Method<a id="connect-method"></a>
 ```py
   connect()
 ```
@@ -204,7 +206,7 @@ Optional method to keep a connection 'open' when executing SQL statements. The [
 
 </br>
 
-#### disconnect() Method
+#### disconnect() Method<a id="disconnect-method"></a>
 ```py
   disconnect()
 ```
@@ -215,7 +217,7 @@ For closing a connection after query() and fetching the data or when having call
 
 </br>
 
-#### cursor() Method
+#### cursor() Method<a id="cursor-method"></a>
 ```py
   cursor(cursorclass=mariadb.cursors.Cursor, **kwargs)
 ```
@@ -226,7 +228,7 @@ Creates a connection and returns a cursor to be used directly with the MariaDB c
 
 </br>
 
-#### get_rowcount() Method
+#### get_rowcount() Method<a id="get_rowcount-method"></a>
 ```py
   get_rowcount()
 ```
@@ -236,7 +238,7 @@ Returns the number of rows held by the cursor after running execute statements.
 
 </br>
 
-#### last_error() Method
+#### last_error() Method<a id="last_error-method"></a>
 ```py
   last_error()
 ```
